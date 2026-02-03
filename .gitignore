@@ -1,0 +1,14 @@
+.gradle
+.idea
+.cxx
+.externalNativeBuild
+build
+captures
+
+._*
+*.iml
+jd-gui.cfg
+.DS_Store
+local.properties
+
+**/jadx-*/
