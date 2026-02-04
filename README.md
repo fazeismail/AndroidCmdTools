@@ -2,7 +2,7 @@
 
 * 项目地址：[Github](https://github.com/getActivity/AndroidCmdTools)
 
-* 文章介绍：[都 2026 了，还有人在手敲命令行？](https://juejin.cn/post/7602411521070825491)
+* 文章介绍：[别再手敲命令行了，用上它让你爽到起飞](https://juejin.cn/post/7602411521070825491)
 
 #### 项目简介
 
