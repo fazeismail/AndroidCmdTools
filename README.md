@@ -8,6 +8,10 @@
 
 * AndroidCmdTools 是基于 Android 开发中常用命令行封装的项目，基本涵盖 Android 开发和测试的方方面面，项目采用 shell 脚本语言编写，提供一键执行的脚本文件，方便开发者和测试人员使用。
 
+![](picture/macOs.png)
+
+![](picture/windows.png)
+
 #### 项目亮点
 
 * 支持多平台：macOs、Windows、Linux
