@@ -5,10 +5,8 @@
 #      time    : 2026/01/25
 #      desc    : 文件路径工具脚本
 # ----------------------------------------------------------------------
-[ -z "" ] || source "/SystemPlatform.sh"
-source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/SystemPlatform.sh"
-[ -z "" ] || source "/EnvironmentTools.sh"
-source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/EnvironmentTools.sh"
+source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/SystemPlatform.sh" || source "SystemPlatform.sh"
+source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/EnvironmentTools.sh" || source "EnvironmentTools.sh"
 
 getFileSeparator() {
     if isWindows; then
