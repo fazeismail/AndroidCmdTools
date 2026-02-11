@@ -52,7 +52,7 @@ powerOffDeviceForDevice() {
 
     echo "你确定要对设备进行关机？（y/n）"
     read -r powerOffConfirm
-    if [[ ${powerOffConfirm} == "y" || ${powerOffConfirm} == "Y" ]]; then
+    if [[ ${powerOffConfirm} =~ ^[yY]$ ]]; then
         adbDeviceIdsString=$(getAdbDeviceIdsString)
         fastbootDeviceIdsString=$(getFastbootDeviceIdsString)
         if [[ -n "${deviceId}" ]]; then
@@ -71,7 +71,7 @@ powerOffDeviceForDevice() {
             done < <(echo "${fastbootDeviceIdsString}" | tr -d '\r' | grep -v '^$')
         fi
         exit 0
-    elif [[ ${powerOffConfirm} == "n" || ${powerOffConfirm} == "N" ]]; then
+    elif [[ ${powerOffConfirm} =~ ^[nN]$ ]]; then
         echo "✅ 已取消关机操作"
         exit 0
     else

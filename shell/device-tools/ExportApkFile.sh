@@ -24,9 +24,9 @@ waitUserInputParameter() {
     if [[ -z "${targetPackageName}" ]]; then
         echo "是否导出系统应用？（y/n）："
         read -r includeSystemConfirm
-        if [[ "${includeSystemConfirm}" == "y" || "${includeSystemConfirm}" == "Y" ]]; then
+        if [[ "${includeSystemConfirm}" =~ ^[yY]$ ]]; then
             includeSystemApps="true"
-        elif [[ "${includeSystemConfirm}" == "n" || "${includeSystemConfirm}" == "N" ]]; then
+        elif [[ "${includeSystemConfirm}" =~ ^[nN]$ ]]; then
             includeSystemApps="false"
         else
             echo "❌ 无效选择，已取消操作"

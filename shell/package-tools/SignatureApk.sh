@@ -54,7 +54,7 @@ waitUserInputParameter() {
     if [[ -z "${oneKeySignature}" ]]; then
         oneKeySignature="y"
     fi
-    if [[ "${oneKeySignature}" = "y" || "${oneKeySignature}" = "Y" ]]; then
+    if [[ "${oneKeySignature}" =~ ^[yY]$ ]]; then
         storeFilePath="${resourcesDirPath}$(getFileSeparator)signatureFile$(getFileSeparator)AppSignature.jks"
         apkSignerJarFilePath=""
     else
@@ -108,10 +108,10 @@ waitUserInputParameter() {
         if [[ -z "${overwriteSourceFileConfirm}" ]]; then
             overwriteSourceFile="false"
             break
-        elif [[ "${overwriteSourceFileConfirm}" == "y" || "${overwriteSourceFileConfirm}" == "Y" ]]; then
+        elif [[ "${overwriteSourceFileConfirm}" =~ ^[yY]$ ]]; then
             overwriteSourceFile="true"
             break
-        elif [[ "${overwriteSourceFileConfirm}" == "n" || "${overwriteSourceFileConfirm}" == "N" ]]; then
+        elif [[ "${overwriteSourceFileConfirm}" =~ ^[nN]$ ]]; then
             overwriteSourceFile="false"
             break
         else
@@ -126,10 +126,10 @@ waitUserInputParameter() {
         if [[ -z "${customSigningSchemeConfirm}" ]]; then
             customSigningScheme="false"
             break
-        elif [[ "${customSigningSchemeConfirm}" == "y" || "${customSigningSchemeConfirm}" == "Y" ]]; then
+        elif [[ "${customSigningSchemeConfirm}" =~ ^[yY]$ ]]; then
             customSigningScheme="true"
             break
-        elif [[ "${customSigningSchemeConfirm}" == "n" || "${customSigningSchemeConfirm}" == "N" ]]; then
+        elif [[ "${customSigningSchemeConfirm}" =~ ^[nN]$ ]]; then
             customSigningScheme="false"
             break
         else
@@ -145,10 +145,10 @@ waitUserInputParameter() {
     echo "是否使用 v1 进行签名？（y/n）"
     while true; do
         read -r v1SigningSchemeConfirm
-        if [[ "${v1SigningSchemeConfirm}" == "y" || "${v1SigningSchemeConfirm}" == "Y" ]]; then
+        if [[ "${v1SigningSchemeConfirm}" =~ ^[yY]$ ]]; then
             v1SigningScheme="true"
             break
-        elif [[ "${v1SigningSchemeConfirm}" == "n" || "${v1SigningSchemeConfirm}" == "N" ]]; then
+        elif [[ "${v1SigningSchemeConfirm}" =~ ^[nN]$ ]]; then
             v1SigningScheme="false"
             break
         else
@@ -160,10 +160,10 @@ waitUserInputParameter() {
     echo "是否使用 v2 进行签名？（y/n）"
     while true; do
         read -r v2SigningSchemeConfirm
-        if [[ "${v2SigningSchemeConfirm}" == "y" || "${v2SigningSchemeConfirm}" == "Y" ]]; then
+        if [[ "${v2SigningSchemeConfirm}" =~ ^[yY]$ ]]; then
             v2SigningScheme="true"
             break
-        elif [[ "${v2SigningSchemeConfirm}" == "n" || "${v2SigningSchemeConfirm}" == "N" ]]; then
+        elif [[ "${v2SigningSchemeConfirm}" =~ ^[nN]$ ]]; then
             v2SigningScheme="false"
             break
         else
@@ -175,10 +175,10 @@ waitUserInputParameter() {
     echo "是否使用 v3 进行签名？（y/n）"
     while true; do
         read -r v3SigningSchemeConfirm
-        if [[ "${v3SigningSchemeConfirm}" == "y" || "${v3SigningSchemeConfirm}" == "Y" ]]; then
+        if [[ "${v3SigningSchemeConfirm}" =~ ^[yY]$ ]]; then
             v3SigningScheme="true"
             break
-        elif [[ "${v3SigningSchemeConfirm}" == "n" || "${v3SigningSchemeConfirm}" == "N" ]]; then
+        elif [[ "${v3SigningSchemeConfirm}" =~ ^[nN]$ ]]; then
             v3SigningScheme="false"
             break
         else
@@ -190,10 +190,10 @@ waitUserInputParameter() {
     echo "是否使用 v4 进行签名？（y/n）"
     while true; do
         read -r v4SigningSchemeConfirm
-        if [[ "${v4SigningSchemeConfirm}" == "y" || "${v4SigningSchemeConfirm}" == "Y" ]]; then
+        if [[ "${v4SigningSchemeConfirm}" =~ ^[yY]$ ]]; then
             v4SigningScheme="true"
             break
-        elif [[ "${v4SigningSchemeConfirm}" == "n" || "${v4SigningSchemeConfirm}" == "N" ]]; then
+        elif [[ "${v4SigningSchemeConfirm}" =~ ^[nN]$ ]]; then
             v4SigningScheme="false"
             break
         else

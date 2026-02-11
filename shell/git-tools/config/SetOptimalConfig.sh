@@ -56,7 +56,7 @@ waitUserInputParameter() {
     fi
     while true; do
         read -r configConfirm
-        if [[ "${configConfirm}" == "y" || "${configConfirm}" == "Y" ]]; then
+        if [[ "${configConfirm}" =~ ^[yY]$ ]]; then
             setOptimalConfig
             if [[ -n "${repositoryDirPath}" ]]; then
                 echo "✅ 仓库 Git 最佳配置完成"
@@ -64,7 +64,7 @@ waitUserInputParameter() {
                 echo "✅ 全局 Git 最佳配置完成"
             fi
             break
-        elif [[ "${configConfirm}" == "n" || "${configConfirm}" == "N" ]]; then
+        elif [[ "${configConfirm}" =~ ^[nN]$ ]]; then
             echo "✅ 用户手动取消操作"
             break
         else

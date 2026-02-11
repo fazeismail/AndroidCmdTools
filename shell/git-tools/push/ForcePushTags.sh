@@ -32,16 +32,16 @@ forcePushTags() {
     echo "👻 是否用本地标签覆盖远端对应的标签？（y/n）"
     while true; do
         read -r rewriteTagConfirm
-        if [[ "${rewriteTagConfirm}" == "y" || "${rewriteTagConfirm}" == "Y" ]]; then
+        if [[ "${rewriteTagConfirm}" =~ ^[yY]$ ]]; then
             echo "👻 该操作会覆盖远端的标签，这是一个危险的操作，你确定要继续吗？（y/n）"
             read -r forcePushBranchConfirm
-            if [[ ${forcePushBranchConfirm} != "y" && ${forcePushBranchConfirm} != "Y" ]]; then
+            if [[ ! ${forcePushBranchConfirm} =~ ^[yY]$ ]]; then
                 echo "✅ 已放弃强制推送标签"
                 exit 0
             fi
             echo "💊 该操作一旦完成将不可逆，并且没有任何形式的备份（没有后悔药），你确定要继续吗？（y/n）"
             read -r forcePushBranchConfirm
-            if [[ ${forcePushBranchConfirm} != "y" && ${forcePushBranchConfirm} != "Y" ]]; then
+            if [[ ! ${forcePushBranchConfirm} =~ ^[yY]$ ]]; then
                 echo "✅ 已放弃强制推送标签"
                 exit 0
             fi
@@ -61,7 +61,7 @@ forcePushTags() {
                 echo "❌ 推送标签失败，错误码：${exitCode}"
                 exit "${exitCode}"
             fi
-        elif [[ "${rewriteTagConfirm}" == "n" || "${rewriteTagConfirm}" == "N" ]]; then
+        elif [[ "${rewriteTagConfirm}" =~ ^[nN]$ ]]; then
             echo "✅ 已跳过标签推送"
             exit 0
         else

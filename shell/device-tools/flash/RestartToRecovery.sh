@@ -50,7 +50,7 @@ rebootToRecoveryForDevice() {
     deviceId="$(inputMultipleDevice)"
     echo "你确定要将设备重启到 recovery 模式？（y/n）"
     read -r rebootRecoveryConfirm
-    if [[ ${rebootRecoveryConfirm} == "y" || ${rebootRecoveryConfirm} == "Y" ]]; then
+    if [[ ${rebootRecoveryConfirm} =~ ^[yY]$ ]]; then
         if [[ -n "${deviceId}" ]]; then
             adbDeviceIdsString=$(getAdbDeviceIdsString)
             fastbootDeviceIdsString=$(getFastbootDeviceIdsString)
@@ -69,7 +69,7 @@ rebootToRecoveryForDevice() {
                 rebootToRecoveryByFastboot "${fastbootDeviceId}"
             done < <(echo "${fastbootDeviceIdsString}" | tr -d '\r' | grep -v '^$')
         fi
-    elif [[ ${rebootRecoveryConfirm} == "n" || ${rebootRecoveryConfirm} == "N" ]]; then
+    elif [[ ${rebootRecoveryConfirm} =~ ^[nN]$ ]]; then
         echo "✅ 已取消操作"
     else
         echo "❌ 输入错误，取消操作"

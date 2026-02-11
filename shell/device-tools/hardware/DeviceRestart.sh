@@ -51,7 +51,7 @@ rebootDeviceForDevice() {
     deviceId="$(inputMultipleDevice)"
     echo "你确定要对设备进行重启？（y/n）"
     read -r rebootConfirm
-    if [[ ${rebootConfirm} == "y" || ${rebootConfirm} == "Y" ]]; then
+    if [[ ${rebootConfirm} =~ ^[yY]$ ]]; then
         if [[ -n "${deviceId}" ]]; then
             adbDeviceIdsString=$(getAdbDeviceIdsString)
             fastbootDeviceIdsString=$(getFastbootDeviceIdsString)
@@ -71,7 +71,7 @@ rebootDeviceForDevice() {
             done < <(echo "${fastbootDeviceIdsString}" | tr -d '\r' | grep -v '^$')
         fi
         exit 0
-    elif [[ ${rebootConfirm} == "n" || ${rebootConfirm} == "N" ]]; then
+    elif [[ ${rebootConfirm} =~ ^[nN]$ ]]; then
         echo "✅ 已取消重启操作"
         exit 0
     else

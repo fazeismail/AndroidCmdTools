@@ -446,14 +446,14 @@ checkInstallAdbKeyBoard() {
         echo "🤔 检测到 [${adbDeviceId}] 设备 ADBKeyBoard 还未安装，请问是否安装？（y/n）"
         while true; do
             read -r installConfirm
-            if [[ "${installConfirm}" == "y" || "${installConfirm}" == "Y" ]]; then
+            if [[ "${installConfirm}" =~ ^[yY]$ ]]; then
                 installAdbKeyBoard "${adbDeviceId}"
                 local exitCode=$?
                 if (( exitCode != 0 )); then
                     exit ${exitCode}
                 fi
                 break
-            elif [[ "${installConfirm}" == "n" || "${installConfirm}" == "N" ]]; then
+            elif [[ "${installConfirm}" =~ ^[nN]$ ]]; then
                 echo "✅ 用户手动取消安装"
                 exit 0
             else
@@ -499,7 +499,7 @@ inputTextForDevice() {
 
     while true; do
         read -r focusConfirm
-        if [[ "${focusConfirm}" == "y" || "${focusConfirm}" == "Y" ]]; then
+        if [[ "${focusConfirm}" =~ ^[yY]$ ]]; then
             local pids=()
             for adbDeviceId in "${adbDeviceList[@]}"; do
                 inputTextSingleDevice "${adbDeviceId}" "${inputText}" "${needAdbKeyboard}" &
@@ -515,7 +515,7 @@ inputTextForDevice() {
                 echo "✅ 当前设备的文本输入任务已完成"
             fi
             break
-        elif [[ "${focusConfirm}" == "n" || "${focusConfirm}" == "N" ]]; then
+        elif [[ "${focusConfirm}" =~ ^[nN]$ ]]; then
             disabledAdbKeyBoard
             echo "✅ 用户选择不获取焦点，无法进行下一步，取消操作"
             break

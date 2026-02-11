@@ -19,9 +19,9 @@ restartAdbProcess() {
     echo "确定要重启 adb 进程? （y/n）"
     while true; do
         read -r restartConfirm
-        if [[ "${restartConfirm}" == "y" || "${restartConfirm}" == "Y" ]]; then
+        if [[ "${restartConfirm}" =~ ^[yY]$ ]]; then
             break
-        elif [[ "${restartConfirm}" == "n" || "${restartConfirm}" == "N" ]]; then
+        elif [[ "${restartConfirm}" =~ ^[nN]$ ]]; then
             echo "✅ 用户手动取消操作"
             return 0
         else

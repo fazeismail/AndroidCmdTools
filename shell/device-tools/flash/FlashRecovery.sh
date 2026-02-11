@@ -46,10 +46,10 @@ flashRecoveryForDevice() {
     echo "这是一个危险操作，你确定要给设备刷入新的 recovery ？（y/n）"
     read -r flashConfirm
 
-    if [[ "${flashConfirm}" == "n" || "${flashConfirm}" == "N" ]]; then
+    if [[ "${flashConfirm}" =~ ^[nN]$ ]]; then
         echo "✅ 用户手动取消操作"
         return 0
-    elif [[ "${flashConfirm}" != "y" && "${flashConfirm}" != "Y" ]]; then
+    elif [[ ! "${flashConfirm}" =~ ^[yY]$ ]]; then
         echo "❌ 无效选择，已取消操作"
         return 1
     fi

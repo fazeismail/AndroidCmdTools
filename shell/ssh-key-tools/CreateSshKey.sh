@@ -117,7 +117,7 @@ createSshKeyFiles() {
 
     echo "是否将新创建的公钥内容复制到剪贴板？（y/n）"
     read -r copyConfirm
-    if [[ "${copyConfirm}" == "y" || "${copyConfirm}" == "Y" ]]; then
+    if [[ "${copyConfirm}" =~ ^[yY]$ ]]; then
         if copyTextFileToPaste "${keyPath}.pub"; then
             echo "✅ 公钥内容已复制到剪贴板"
         else

@@ -56,7 +56,7 @@ uninstallSingleApp() {
         echo "💡 [${deviceId}] 设备未安装 ${packageName} 应用，跳过卸载"
         return 2
     fi
-    if [[ ${retainDataChoice} == "y" || ${retainDataChoice} == "Y" ]]; then
+    if [[ ${retainDataChoice} =~ ^[yY]$ ]]; then
         local outputPrint
         outputPrint=$(adb -s "${deviceId}" shell cmd package uninstall -k "${packageName}" < /dev/null 2>&1)
         local exitCode=$?

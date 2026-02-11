@@ -74,10 +74,10 @@ displayLogcatForDevice() {
         read -r cleanConfirm
         if [[ -z "${cleanConfirm}" ]]; then
             break
-        elif [[ "${cleanConfirm}" == "y" || "${cleanConfirm}" == "Y" ]]; then
+        elif [[ "${cleanConfirm}" =~ ^[yY]$ ]]; then
             adb -s "${deviceId}" logcat -c < /dev/null
             break
-        elif [[ "${cleanConfirm}" == "n" || "${cleanConfirm}" == "N" ]]; then
+        elif [[ "${cleanConfirm}" =~ ^[nN]$ ]]; then
             break
         else
             echo "👻 输入不正确，请输入正确的选项（y/n）"

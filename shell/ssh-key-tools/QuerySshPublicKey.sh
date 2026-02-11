@@ -75,7 +75,7 @@ waitUserInputParameter() {
         echo "========== ${filePath} =========="
         echo "是否复制公钥内容到剪贴板？（y/n）"
         read -r copyConfirm
-        if [[ "${copyConfirm}" == "y" || "${copyConfirm}" == "Y" ]]; then
+        if [[ "${copyConfirm}" =~ ^[yY]$ ]]; then
             if copyTextFileToPaste "${filePath}"; then
                 echo "✅ 公钥内容已复制到剪贴板"
             else

@@ -84,10 +84,10 @@ waitUserInputParameter() {
     fi
     echo "是否确认删除？（y/n）"
     read -r deleteChoose
-    if [[ "${deleteChoose}" == "n" || "${deleteChoose}" == "N" ]]; then
+    if [[ "${deleteChoose}" =~ ^[nN]$ ]]; then
         echo "✅ 用户手动取消操作"
         exit 0
-    elif [[ "${deleteChoose}" != "y" && "${deleteChoose}" != "Y" ]]; then
+    elif [[ ! "${deleteChoose}" =~ ^[yY]$ ]]; then
         echo "❌ 无效选择，已取消操作"
         exit 1
     fi

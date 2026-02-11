@@ -19,9 +19,9 @@ killAdbProcess() {
     echo "确定要杀死 adb 进程? （y/n）"
     while true; do
         read -r killConfirm
-        if [[ "${killConfirm}" == "y" || "${killConfirm}" == "Y" ]]; then
+        if [[ "${killConfirm}" =~ ^[yY]$ ]]; then
             break
-        elif [[ "${killConfirm}" == "n" || "${killConfirm}" == "N" ]]; then
+        elif [[ "${killConfirm}" =~ ^[nN]$ ]]; then
             echo "✅ 用户手动取消操作"
             return 0
         else

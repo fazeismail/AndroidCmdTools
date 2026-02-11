@@ -126,7 +126,7 @@ main() {
 
     echo "👻 该操作将撤销指定提交，可能影响历史并引发冲突，是否继续？(y/n)"
     read -r proceedDanger
-    if [[ "${proceedDanger}" != "y" && "${proceedDanger}" != "Y" ]]; then
+    if [[ ! "${proceedDanger}" =~ ^[yY]$ ]]; then
         echo "已取消撤销操作"
         exit 1
     fi

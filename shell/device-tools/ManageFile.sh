@@ -646,7 +646,7 @@ removeTarget() {
     local confirmTip="👻 确认删除【${targetType}】${targetName} 吗？(y/n)："
     echo -e "${colorYellow}${confirmTip}${colorReset}"
     read -r confirmInput
-    if [[ "${confirmInput}" != "y" && "${confirmInput}" != "Y" ]]; then
+    if [[ ! "${confirmInput}" =~ ^[yY]$ ]]; then
         echo -e "\n${colorYellow}💡 已取消删除命令：${targetName}${colorReset}"
         return 1
     fi
@@ -947,7 +947,7 @@ pasteTarget() {
          echo -e "${colorYellow}👻 目标位置已存在同名文件/文件夹：${sourceName}${colorReset}"
          echo -e "是否覆盖/合并？(y/n)："
          read -r confirmInput
-         if [[ "${confirmInput}" != "y" && "${confirmInput}" != "Y" ]]; then
+         if [[ ! "${confirmInput}" =~ ^[yY]$ ]]; then
              echo -e "${colorYellow}💡 已取消操作${colorReset}"
              return 1
          fi

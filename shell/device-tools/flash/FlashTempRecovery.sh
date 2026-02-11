@@ -94,10 +94,10 @@ flashTempRecoveryForDevice() {
 
     echo "这是一个危险操作，你确定要给设备加载临时的 recovery ？（y/n）"
     read -r loadConfirm
-    if [[ "${loadConfirm}" == "n" || "${loadConfirm}" == "N" ]]; then
+    if [[ "${loadConfirm}" =~ ^[nN]$ ]]; then
         echo "✅ 用户手动取消操作"
         return 0
-    elif [[ "${loadConfirm}" != "y" && "${loadConfirm}" != "Y" ]]; then
+    elif [[ ! "${loadConfirm}" =~ ^[yY]$ ]]; then
         echo "❌ 无效选择，已取消操作"
         return 1
     fi
