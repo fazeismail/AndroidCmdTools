@@ -46,7 +46,11 @@ displayLogcatSingleDevice() {
     if [[ -z ${packageName} ]]; then
         adb -s "${deviceId}" logcat < /dev/null
     else
-        uid=$(adb -s "${deviceId}" shell am getuid -n "${packageName}" 2>/dev/null | cut -d: -f2 | xargs)
+        local uid
+        if (( $(getAndroidVersionCodeByAdb "${deviceId}") >= 26 )); then
+            uid=$(adb -s "${deviceId}" shell pm list packages -U < /dev/null 2>/dev/null | grep "${packageName}" | awk -F 'uid:' '{print $2}')
+        fi
+
         if [[ -z "${uid}" || ! "${uid}" =~ ^[0-9]+$ ]]; then
             uid=$(adb -s "${deviceId}" shell dumpsys package "${packageName}" < /dev/null 2>/dev/null | awk -F'=' '/userId/{print $2; exit}' | awk '{print $1}' | tr -d '\r')
         fi
