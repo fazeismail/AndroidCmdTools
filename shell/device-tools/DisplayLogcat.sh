@@ -15,17 +15,6 @@ cd "${originalDirPath}" || exit 1
 unset scriptDirPath
 unset originalDirPath
 
-isSupportLogcatUidFilter() {
-    local deviceId=$1
-    local outputPrint
-    outputPrint=$(adb -s "${deviceId}" logcat --help 2>&1)
-    if echo "${outputPrint}" | grep -q -- "--uid"; then
-        return 0
-    else
-        return 1
-    fi
-}
-
 waitUserInputParameter() {
     echo "请输入查看 Logcat 的应用包名（留空则查看所有应用的日志）："
     while true; do
@@ -66,7 +55,7 @@ displayLogcatSingleDevice() {
             return 1
         fi
 
-        if isSupportLogcatUidFilter "${deviceId}"; then
+        if (( androidVersionCode >= 31 )); then
             echo "📝 设备支持 uid 过滤，使用原生过滤的方式（UID: ${uid}）"
             adb -s "${deviceId}" logcat --uid "${uid}" < /dev/null
         else
