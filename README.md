@@ -90,7 +90,7 @@
 
             * 去系统环境变量配置中，移除刚刚给 Git Bash 配置的环境变量，即前面配置的 `C:\Program Files\Git\bin`，移除该环境变量不会影响使用 Git 命令
 
-            * 下载 [WindowsBash](https://pan.baidu.com/s/14qZiU9BWvJae_JwyzHiR1w?pwd=6666)，解压 WindowsBash 压缩包，推荐解压到 `C:\Program Files\WindowsBash` 这个目录下
+            * 下载 [WindowsBash](https://github.com/getActivity/AndroidCmdTools/releases/download/1.0/WindowsBash.zip)，解压 WindowsBash 压缩包，推荐解压到 `C:\Program Files\WindowsBash` 这个目录下
 
             * 然后尝试打开 `C:\Program Files\WindowsBash\bin\bash.exe` 看看是否能正常打开 Bash 终端，如果能正常打开，则说明 WindowsBash 兼容当前 Windows 系统
 
